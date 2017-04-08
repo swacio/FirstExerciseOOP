@@ -14,17 +14,22 @@ public class Basket {
         this.productArrayList = new ArrayList<Product>();
     }
 
-    public void addProduct(Product product, Client client){
+    public String addProduct(Product product, Client client){
+        String result = "cos";
         float temp = client.remainingCapacity();
         if(temp < product.getWeight()){
-            System.out.println("Przykro mi nie mozesz dodac wiecej do koszyka!");
+            //System.out.println("Przykro mi nie mozesz dodac wiecej do koszyka!");
+            result = "Przykro mi nie mozesz dodac wiecej do koszyka!";
         }else{
             if(product.isForAdult() && client.getAge()<18){
-                System.out.println("Ograniczenia wiekowe!");
+                //System.out.println("Ograniczenia wiekowe!");
+                result = "Ograniczenia wiekowe!";
             }else {
                 productArrayList.add(product);
+                result = "Dodano produkt!";
             }
         }
+        return result;
     }
 
     public void removeProduct(Product product){

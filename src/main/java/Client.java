@@ -23,8 +23,9 @@ public class Client {
         return temp;
     }
 
-    public void showRemainingCapacity(){
-        System.out.println(remainingCapacity());
+    public String showRemainingCapacity(){
+        String result = "Pozostało: " + remainingCapacity();
+        return result;
     }
 
     public int getAge() {
